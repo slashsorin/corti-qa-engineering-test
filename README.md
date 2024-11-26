@@ -10,3 +10,7 @@ Testing the Pestore APIs using Playwright
 OR
 
 4. `npx playwright test simpleHappyPath.spec.ts` - this will run only the test suite inside the `simpleHappyPath.spec.ts` file
+
+## Additional solution documentation
+
+Can be found inside the `Corti_Solution_Documentation.pdf`
