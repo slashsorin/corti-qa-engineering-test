@@ -29,8 +29,12 @@ import path from "path";
 
 [
     // Mix of invalid/unsupported id values & file types
-    // Requires documentation (business & technical agreement) regarding what is supported & what not.
+    // These first 4 cases should be treated before the request itself:
     { petId: 45662008, filePath: './tests/pet/test_data/not_found.jpg' },
+    { petId: 45662008, filePath: '' },
+    { petId: 45662008, filePath: './' },
+    { petId: 45662008, filePath: './tests/pet/test_data' },
+    // The next cases require documentation (business & technical agreement) regarding what is supported & what not.
     { petId: -111, filePath: './tests/pet/test_data/dog.jpg' },
     { petId: 11.5, filePath: './tests/pet/test_data/dog.jpg' },
     { petId: 'myCustomTestId', filePath: './tests/pet/test_data/dog.jpg' },

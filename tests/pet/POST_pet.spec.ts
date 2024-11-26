@@ -47,7 +47,7 @@ test(`Successfull POST to /pet`, async ({ request }) => {
 [
     // Create with the same (non-unique) id more than once.
     // Requires business decision.
-    { petId: randomId },
+    { petId: 11007393 },
     // Testing edges and beyond
     { petId: 4566200812351087231323 },
     // Invalid/unsupported id values
