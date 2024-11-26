@@ -11,7 +11,7 @@ OR
 
 4. `npx playwright test simpleHappyPath.spec.ts` - this will run only the test suite inside the `simpleHappyPath.spec.ts` file
 
-## Additional solution documentation
+## Solution documentation
 
 ### What was implemented:
 
@@ -27,7 +27,7 @@ DELETE /pet/{petId}
 
 *ToDo: add coverage for the other endpoints & API sections inside the swagger documentation.*
 
-### Tool used:
+### Tools used:
 The Playwright test automation framework: https://playwright.dev/.
 
 ### What was implemented:
