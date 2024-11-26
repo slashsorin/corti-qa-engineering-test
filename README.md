@@ -33,10 +33,9 @@ The Playwright test automation framework: https://playwright.dev/.
 ### What was implemented:
 <ul>
 <li>Testing valid, non-valid, and unsupported ID values and file types.</li>
-<li>Tests parameterisation: Running the same test multiple times with different inputs.</li>
-<li>Testing flows:
-Implemented one happy path flow: create pet, upload image to pet, update pet info, delete pet.</li>
-<li>Implementation-wise, I used the describe interface from Playwright using test and test.step annotations. In certain scenarios we might need to use the beforeEach, beforeAll, afterEach, afterAll test hooks.</li>
+<li>Tests parameterisation: running the same test multiple times with different inputs.</li>
+<li>Testing flows: implemented one happy path flow: create pet, upload image to pet, update pet info, delete pet.</li>
+<li>For defining/grouping the tests, I used the <i>describe</i> interface from Playwright using the <i>test</i> and <i>test.step</i> annotations. In certain scenarios we might need to use the <i>beforeEach, beforeAll, afterEach, afterAll</i> test hooks.</li>
 </ul>
 
 ### Bonus:
@@ -46,14 +45,15 @@ The current implementation is able to be set & run via a CI/CD tool, eg. TeamCit
 I foresee the following steps in the setup:
 <ul>
 <li>The CI/CD server has access to clone the test repository</li>
-<li>Framework setup/installation via npm install</li>
-<li>Running test: npx playwright test</li>
+<li>Framework setup/installation via <i>npm install</i></li>
+<li>Running test: <i>npx playwright test</i></li>
 <li>We can have a bunch of other optional steps depending of the setup:
 <ul>
 <li>We might want to setup/reset a DB before running tests</li>
 <li>We might need to spin up an environment</li>
 <li>A custom reporting step</li>
 </ul>
+</li>
 </ul>
 
 Other configurations:
