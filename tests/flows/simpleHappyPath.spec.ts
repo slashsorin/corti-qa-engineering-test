@@ -118,7 +118,7 @@ test.describe('Happy pet flow', () => {
                 headers: {
                     Accept: "application/json",
                     ContentType: "application/json",
-                    Api_key: 'special-key' // Doesn't seem to be enforced, the request works without it also.
+                    Api_key: "special-key"
                 }
             });
             expect(response.ok()).toBeTruthy();

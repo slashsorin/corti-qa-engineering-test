@@ -6,9 +6,9 @@ function generateRandomNumber(length) {
         Math.pow(10, length - 1) + Math.random() * 9 * Math.pow(10, length - 1)
     );
 }
+let randomId = generateRandomNumber(8)
 
 test(`Successfull POST to /pet`, async ({ request }) => {
-    let randomId = generateRandomNumber(8)
     let requestBody = {
         "id": randomId,
         "category": {
@@ -47,18 +47,16 @@ test(`Successfull POST to /pet`, async ({ request }) => {
 [
     // Create with the same (non-unique) id more than once.
     // Requires business decision.
-    { petId: 45662008 },
-    // Testing edges
+    { petId: randomId },
+    // Testing edges and beyond
     { petId: 4566200812351087231323 },
-    // Invalid/Unsupported id values
+    // Invalid/unsupported id values
     // Requires documentation regarding what is supported & what not.
     { petId: -111 },
     { petId: 11.5 },
     { petId: 'myCustomPetId' },
 ].forEach(({ petId }) => {
     test(`Unsuccessfull POST to /pet with id: ${petId}`, async ({ request }) => {
-        let randomId = generateRandomNumber(8)
-
         let requestBody = {
             "id": petId,
             "category": {
@@ -84,13 +82,7 @@ test(`Successfull POST to /pet`, async ({ request }) => {
             },
             data: requestBody
         });
-        // Assert the request returned 200 OK: 
+        // Assert the request did not return 200 OK: 
         expect(response.ok()).toBeFalsy();
-        // let responseData = await response.json()
-        // console.log('Data after POST: ', responseData)
-        // // Assertions based on the response data:
-        // expect(responseData.id).toEqual(randomId);
-        // expect(responseData.name).toEqual(requestBody.name);
-        // expect(responseData.status).toEqual('available');
     });
 });

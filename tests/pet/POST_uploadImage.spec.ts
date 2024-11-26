@@ -21,9 +21,9 @@ import path from "path";
             }
         });
         console.log(response)
-        let data = await response.json()
-        console.log('DATA POST PICTURE: ', data)
         expect(response.ok()).toBeTruthy();
+        let data = await response.json()
+        console.log('Data after POST image: ', data)
     });
 });
 
@@ -52,8 +52,6 @@ import path from "path";
             }
         });
         console.log(response)
-        let data = await response.json()
-        console.log('DATA POST PICTURE: ', data)
         expect(response.ok()).toBeFalsy();
     });
 });
